@@ -5,42 +5,48 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── Custom Cursor ──
-  const cursorDot  = document.querySelector('.cursor-dot');
+  const cursorDot = document.querySelector('.cursor-dot');
   const cursorRing = document.querySelector('.cursor-ring');
-  let mouseX = 0, mouseY = 0;
-  let ringX = 0,  ringY = 0;
+  const isTouchDevice = !window.matchMedia('(hover: hover)').matches;
 
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    if (cursorDot) {
+  if (cursorDot && cursorRing && !isTouchDevice) {
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
       cursorDot.style.left = mouseX + 'px';
-      cursorDot.style.top  = mouseY + 'px';
-    }
-  });
+      cursorDot.style.top = mouseY + 'px';
+    });
 
-  function animateRing() {
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-    if (cursorRing) {
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
       cursorRing.style.left = ringX + 'px';
-      cursorRing.style.top  = ringY + 'px';
+      cursorRing.style.top = ringY + 'px';
+      requestAnimationFrame(animateRing);
     }
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
+    animateRing();
 
-  const interactables = document.querySelectorAll('a, button, .service-card, .review-card, .barber-chip');
-  interactables.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      if (cursorRing) { cursorRing.style.width = '44px'; cursorRing.style.height = '44px'; }
-      if (cursorDot)  { cursorDot.style.transform = 'translate(-50%,-50%) scale(1.6)'; }
+    const interactables = document.querySelectorAll('a, button, .service-card, .review-card, .barber-chip');
+    interactables.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorRing.style.width = '44px';
+        cursorRing.style.height = '44px';
+        cursorDot.style.transform = 'translate(-50%,-50%) scale(1.6)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorRing.style.width = '28px';
+        cursorRing.style.height = '28px';
+        cursorDot.style.transform = 'translate(-50%,-50%) scale(1)';
+      });
     });
-    el.addEventListener('mouseleave', () => {
-      if (cursorRing) { cursorRing.style.width = '28px'; cursorRing.style.height = '28px'; }
-      if (cursorDot)  { cursorDot.style.transform = 'translate(-50%,-50%) scale(1)'; }
-    });
-  });
+  } else {
+    // Hide dots if they exist but shouldn't be used
+    if (cursorDot) cursorDot.style.display = 'none';
+    if (cursorRing) cursorRing.style.display = 'none';
+  }
 
   // ── Navbar Scroll Shadow ──
   const navbar = document.querySelector('.navbar');
