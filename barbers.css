@@ -1,0 +1,351 @@
+/* ============================================================
+   BARBERS PAGE — barbers.css
+   ============================================================ */
+
+/* ── HERO ── */
+.br-hero {
+  background: var(--bg-dark);
+  padding-top: 70px;
+  min-height: 65vh;
+  display: flex;
+  align-items: stretch;
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.br-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 15% 60%, rgba(27,77,62,0.35) 0%, transparent 55%),
+    radial-gradient(circle at 85% 20%, rgba(200,169,110,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.br-hero::after {
+  content: 'BNF';
+  position: absolute;
+  right: 5%;
+  bottom: -2rem;
+  font-family: var(--font-heading);
+  font-size: 20vw;
+  color: rgba(245,240,232,0.025);
+  letter-spacing: -0.03em;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+.br-hero-bg {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 5rem 8% 7rem;
+  position: relative;
+  z-index: 1;
+}
+
+.br-hero-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--star-gold);
+  margin-bottom: 1.5rem;
+}
+
+.br-hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  line-height: 0.88;
+  margin-bottom: 2rem;
+}
+.br-hero-title span {
+  font-family: var(--font-heading);
+  font-size: clamp(5rem, 10vw, 11rem);
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  display: block;
+}
+.br-title-outline {
+  color: transparent !important;
+  -webkit-text-stroke: 2px rgba(245,240,232,0.35) !important;
+}
+
+.br-hero-sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(245,240,232,0.55);
+}
+
+.br-hero-deco {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  padding: 5rem 6% 5rem 3%;
+  border-left: 1.5px solid rgba(27,77,62,0.5);
+  position: relative;
+  z-index: 1;
+  min-width: 220px;
+}
+
+.br-hero-stat {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(245,240,232,0.07);
+}
+.br-hero-stat:last-child { border-bottom: none; }
+
+.br-stat-val {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--star-gold);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.br-stat-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.4);
+}
+
+/* ── BARBER PANELS ── */
+.br-panels {
+  background: var(--bg-primary);
+}
+
+.br-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 85vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.br-panel + .br-panel {
+  border-top: 1.5px solid var(--bg-surface);
+}
+
+.br-panel--flip .br-panel-left { order: 2; }
+.br-panel--flip .br-panel-right { order: 1; }
+
+.br-panel-wm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: clamp(6rem, 16vw, 18rem);
+  color: var(--watermark);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.br-panel-left {
+  display: flex;
+  align-items: center;
+  padding: 5rem 5%;
+  position: relative;
+  z-index: 1;
+  background: var(--bg-primary);
+}
+
+.br-panel--flip .br-panel-left {
+  background: var(--bg-secondary);
+}
+
+.br-panel:nth-child(3) .br-panel-left {
+  background: var(--bg-primary);
+}
+
+.br-panel-content {
+  max-width: 520px;
+}
+
+.br-barber-num {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-deep);
+  margin-bottom: 0.75rem;
+  opacity: 0.7;
+}
+
+.br-barber-role {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.br-barber-name {
+  font-family: var(--font-heading);
+  font-size: clamp(4.5rem, 8vw, 8.5rem);
+  color: var(--text-primary);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.br-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.br-chip {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  border: 1.5px solid var(--accent-deep);
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+  transition: background 0.2s, color 0.2s;
+}
+.br-chip:hover {
+  background: var(--accent-deep);
+  color: var(--cream);
+}
+
+.br-barber-bio {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  max-width: 440px;
+}
+
+.br-book-btn {
+  margin-top: 1rem;
+}
+
+.br-panel-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.br-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a3d30 0%, #0d2218 50%, #0a1c15 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.br-photo--alt {
+  background: linear-gradient(135deg, #162d25 0%, #0f2a20 60%, #0a1c15 100%);
+}
+
+.br-photo--dark {
+  background: linear-gradient(135deg, #0f2820 0%, #0a1c14 50%, #070f0b 100%);
+}
+
+.br-photo-placeholder::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    -45deg, transparent, transparent 40px,
+    rgba(245,240,232,0.02) 40px, rgba(245,240,232,0.02) 41px
+  );
+}
+
+.br-photo-inner {
+  text-align: center;
+  color: rgba(245,240,232,0.3);
+  position: relative;
+  z-index: 1;
+}
+.br-photo-inner svg { width: 100px; height: 120px; margin: 0 auto 1rem; }
+.br-photo-inner p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.br-photo-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(transparent, rgba(10,28,20,0.5));
+  pointer-events: none;
+}
+
+/* ── CTA ── */
+.br-cta {
+  background: var(--bg-secondary);
+  padding: 8rem 0 7rem;
+}
+
+.br-cta-inner {
+  max-width: 700px;
+}
+
+.br-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 7vw, 7.5rem);
+  color: var(--text-primary);
+  line-height: 0.88;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.br-cta-sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 450px;
+  line-height: 1.7;
+}
+
+.br-cta-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .br-hero { flex-direction: column; min-height: auto; clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%); }
+  .br-hero-bg { padding: 4rem 5% 3rem; }
+  .br-hero-deco { flex-direction: row; border-left: none; border-top: 1px solid rgba(27,77,62,0.4); padding: 1.5rem 5%; min-width: auto; }
+  .br-hero-stat { padding: 1rem 2rem 1rem 0; border-bottom: none; border-right: 1px solid rgba(245,240,232,0.07); }
+  .br-hero-stat:last-child { border-right: none; }
+  .br-panel { grid-template-columns: 1fr; min-height: auto; }
+  .br-panel-right { height: 50vw; min-height: 280px; }
+  .br-panel--flip .br-panel-left { order: 2; }
+  .br-panel--flip .br-panel-right { order: 1; }
+  .br-panel-wm { font-size: 5rem; }
+  .br-panel-left { padding: 3rem 5%; }
+  .br-cta-btns { flex-direction: column; }
+  .br-cta-btns a { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 600px) {
+  .br-hero-deco { flex-wrap: wrap; gap: 0; }
+  .br-hero-stat { flex: 1 1 auto; min-width: 100px; }
+  .br-barber-name { font-size: 4rem; }
+}
