@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book — Bladez N Fadez Calgary</title>
+  <meta name="description" content="Book your appointment at Bladez N Fadez in Calgary's Skyview Ranch. Choose your barber, service, and time online." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="booking.css" />
+</head>
+<body>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.005 2.116a.75.75 0 0 1 .84.154l1.5 1.5a.75.75 0 0 1 0 1.06L7.09 11.075l1.41 1.41 7.254-7.254a.75.75 0 0 1 1.06 0l1.5 1.5a.75.75 0 0 1 0 1.06l-9 9a.75.75 0 0 1-1.06 0l-1.5-1.5a.75.75 0 0 1 0-1.06l.44-.44-1.41-1.41-.44.44a.75.75 0 0 1-1.06 0l-1.5-1.5a.75.75 0 0 1 0-1.06l7.72-7.72a.75.75 0 0 1 .501-.208zm6.245 13.134a2.25 2.25 0 1 1-3.182 3.182 2.25 2.25 0 0 1 3.182-3.182zm-9.5 0a2.25 2.25 0 1 1-3.182 3.182 2.25 2.25 0 0 1 3.182-3.182z"/></svg>
+      BLADEZ N FADEZ
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="barbers.html">Our Barbers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="booking.html" class="nav-book">Book Now</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-drawer">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="barbers.html">Our Barbers</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="booking.html" class="nav-book">Book Now</a>
+  </div>
+  <div class="drawer-overlay"></div>
+
+  <!-- ══ SPLIT LAYOUT ══ -->
+  <div class="bk-layout">
+
+    <!-- LEFT — Dark stacked text -->
+    <div class="bk-left">
+      <div class="bk-left-content">
+        <div class="bk-stacked hero-animate">
+          <span class="bk-word">BOOK</span>
+          <span class="bk-word bk-word--outline">YOUR</span>
+          <span class="bk-word">SLOT</span>
+        </div>
+        <div class="bk-left-info hero-animate">
+          <div class="bk-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Mon–Sat &nbsp;10:00 AM – 7:00 PM</span>
+          </div>
+          <div class="bk-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+            <span>(403) 474-2471</span>
+          </div>
+          <div class="bk-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>Skyview Ranch, Calgary</span>
+          </div>
+        </div>
+        <div class="bk-rating hero-animate">
+          <span class="bk-rating-stars">★★★★★</span>
+          <span class="bk-rating-text">4.6 · 696 Google Reviews</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT — Form -->
+    <div class="bk-right">
+      <div class="bk-form-wrap">
+        <div class="bk-form-header hero-animate">
+          <span class="section-label">Reserve Your Spot</span>
+          <h2 class="bk-form-title">Appointment<br>Details</h2>
+        </div>
+
+        <!-- SUCCESS MESSAGE (hidden initially) -->
+        <div class="bk-success" id="bookingSuccess">
+          <div class="bk-success-icon">
+            <svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="25" stroke="var(--accent-deep)" stroke-width="2"/><path d="M14 26l8 8 16-16" stroke="var(--accent-deep)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="bk-success-title">Booking Received!</h3>
+          <p class="bk-success-sub">We've received your booking request and will confirm shortly via phone or email. We're looking forward to seeing you.</p>
+          <a href="index.html" class="btn-primary bk-success-btn">Back to Home</a>
+        </div>
+
+        <!-- FORM -->
+        <form class="bk-form" id="bookingForm" novalidate>
+
+          <div class="bk-form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(403) 000-0000" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+
+          <div class="bk-form-row">
+            <div class="form-group">
+              <label for="barber">Select Barber</label>
+              <select id="barber" name="barber">
+                <option value="">No Preference</option>
+                <option value="mike">Mike — Lead Barber</option>
+                <option value="russel">Russel — Rising Star</option>
+                <option value="romell">Romell — Precision</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="service">Select Service</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Choose a service</option>
+                <optgroup label="Haircuts">
+                  <option value="fade-taper">Fade &amp; Taper — $35</option>
+                  <option value="scissor-cut">Scissor Cut — $30</option>
+                  <option value="long-haircut">Long Haircut — $40</option>
+                  <option value="kids-cut">Kids Cut — $25</option>
+                  <option value="shape-up">Hair Shape Up — $20</option>
+                </optgroup>
+                <optgroup label="Beard">
+                  <option value="beard-trim">Beard Trim — $20</option>
+                  <option value="beard-shape">Beard Shape Up — $25</option>
+                  <option value="hot-towel">Hot Towel Shave — $30</option>
+                </optgroup>
+                <optgroup label="Combos">
+                  <option value="haircut-beard">Haircut + Beard — $50</option>
+                  <option value="full-package">Full Grooming Package — $65</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <div class="bk-form-row">
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="form-group">
+              <label for="time">Preferred Time</label>
+              <select id="time" name="time" required>
+                <option value="" disabled selected>Select a time</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="12:30 PM">12:30 PM</option>
+                <option value="1:00 PM">1:00 PM</option>
+                <option value="1:30 PM">1:30 PM</option>
+                <option value="2:00 PM">2:00 PM</option>
+                <option value="2:30 PM">2:30 PM</option>
+                <option value="3:00 PM">3:00 PM</option>
+                <option value="3:30 PM">3:30 PM</option>
+                <option value="4:00 PM">4:00 PM</option>
+                <option value="4:30 PM">4:30 PM</option>
+                <option value="5:00 PM">5:00 PM</option>
+                <option value="5:30 PM">5:30 PM</option>
+                <option value="6:00 PM">6:00 PM</option>
+                <option value="6:30 PM">6:30 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Notes / Special Requests</label>
+            <textarea id="notes" name="notes" placeholder="Any special requests, style references, or info we should know…"></textarea>
+          </div>
+
+          <button type="submit" class="btn-dark bk-submit-btn">
+            <span id="submitText">CONFIRM BOOKING</span>
+            <span id="submitSpinner" class="bk-spinner" style="display:none">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </span>
+          </button>
+
+          <p class="bk-call-note">Prefer to call? Reach us at <a href="tel:4034742471">(403) 474-2471</a></p>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-grid container">
+      <div class="footer-brand">
+        <h2>BLADEZ N FADEZ</h2>
+        <p>"Calgary's community barbershop — where every cut tells a story."</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="barbers.html">Our Barbers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="booking.html">Book Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <ul>
+          <li><a href="#">55 Skyview Ranch Rd NE #1105</a></li>
+          <li><a href="#">Calgary, AB T3N 0E4</a></li>
+          <li><a href="tel:4034742471">(403) 474-2471</a></li>
+          <li><a href="#">Mon–Sat: 10AM – 7PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2025 Bladez N Fadez. All rights reserved.</p>
+      <p>Skyview Ranch, Calgary, Alberta</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <script src="main.js"></script>
+  <script>
+    // Set min date to today
+    const dateInput = document.getElementById('date');
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const dd = String(today.getDate()).padStart(2,'0');
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+
+    // Pre-fill barber if coming from barbers page
+    const preferredBarber = sessionStorage.getItem('preferredBarber');
+    if (preferredBarber) {
+      const barberSelect = document.getElementById('barber');
+      barberSelect.value = preferredBarber;
+      sessionStorage.removeItem('preferredBarber');
+    }
+
+    // Form submission
+    const form = document.getElementById('bookingForm');
+    const successMsg = document.getElementById('bookingSuccess');
+    const submitText = document.getElementById('submitText');
+    const submitSpinner = document.getElementById('submitSpinner');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Simple validation
+      const required = form.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(field => {
+        if (!field.value.trim()) {
+          valid = false;
+          field.style.borderColor = '#c0392b';
+          setTimeout(() => field.style.borderColor = '', 2500);
+        }
+      });
+      if (!valid) return;
+
+      // Simulate submission
+      submitText.style.display = 'none';
+      submitSpinner.style.display = 'flex';
+
+      setTimeout(() => {
+        form.style.opacity = '0';
+        form.style.transform = 'translateY(-20px)';
+        form.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        setTimeout(() => {
+          form.style.display = 'none';
+          successMsg.classList.add('visible');
+          document.querySelector('.bk-form-header').style.display = 'none';
+        }, 400);
+      }, 1200);
+    });
+
+    // Clear validation on input
+    form.querySelectorAll('input, select, textarea').forEach(field => {
+      field.addEventListener('input', () => field.style.borderColor = '');
+      field.addEventListener('change', () => field.style.borderColor = '');
+    });
+  </script>
+</body>
+</html>
