@@ -1,0 +1,16 @@
+{
+  "name": "bladez-n-fadez",
+  "version": "1.0.0",
+  "description": "Premium Barbershop Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
